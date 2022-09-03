@@ -47,7 +47,7 @@ function Feed() {
         <div className="feed__input">
           <EditIcon />
           <form>
-            <input
+            <input placeholder="Start a post"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               type="text"

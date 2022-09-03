@@ -9,11 +9,11 @@ function Login() {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [profilePic, setProfilePic] = useState("");
+
   const dispatch = useDispatch();
 
   const loginToApp = (e) => {
     e.preventDefault();
-
     auth
       .signInWithEmailAndPassword(email, password)
       .then((userAuth) => {
@@ -48,7 +48,7 @@ function Login() {
                 email: userAuth.user.email,
                 uid: userAuth.user.uid,
                 displayName: name,
-                photoUrl: profilePic,
+                photoURL: profilePic,
               })
             );
           });
@@ -60,46 +60,41 @@ function Login() {
     <div className="login">
       <img
         src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/5ae385102039581.5f2d22187268f.png"
-        alt=""
+        alt="linkin logo"
       />
 
       <form>
         <input
+          type="text"
           value={name}
-          onchange={(e) => setName(e.target.value)}
+          onChange={(e) => setName(e.target.value)}
           placeholder="Full name (required if registering)"
-          type="text"
         />
-
         <input
+          type="text"
           value={profilePic}
-          onchange={(e) => setProfilePic(e.target.value)}
-          placeholder="Profile pic URL (optional)"
-          type="text"
+          onChange={(e) => setProfilePic(e.target.value)}
+          placeholder="Profile picture URL (optional)"
         />
-
         <input
-          value={email}
-          onchange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
           type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
         />
-
         <input
-          value={password}
-          onchange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
           type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
         />
-
         <button type="submit" onClick={loginToApp}>
           Sign In
         </button>
       </form>
-
       <p>
         Not a member?{" "}
-        <span className="login__register" onClick={register}>
+        <span className="login_register" onClick={register}>
           Register Now
         </span>
       </p>
