@@ -95,8 +95,8 @@ function Login() {
       <p>
         Not a member?{" "}
         <span className="login_register" onClick={register}>
-          Register Now
-        </span>
+          register 
+        </span> Now
       </p>
     </div>
   );
